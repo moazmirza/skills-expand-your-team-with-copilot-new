@@ -1,0 +1,23 @@
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from backend.database import initial_activities
+
+
+def test_manga_maniacs_activity_is_seeded():
+    activity = initial_activities["Manga Maniacs"]
+
+    assert activity["description"] == (
+        "Dive into epic adventures, unforgettable characters, and stunning worlds "
+        "from Japanese manga and graphic novels."
+    )
+    assert activity["schedule"] == "Tuesdays, 5:00 PM - 6:00 PM"
+    assert activity["schedule_details"]["days"] == ["Tuesday"]
+    assert activity["schedule_details"]["start_time"] == "17:00"
+    assert activity["schedule_details"]["end_time"] == "18:00"
+    assert activity["max_participants"] == 25
+    assert activity["participants"] == []
