@@ -12,8 +12,8 @@ def test_manga_maniacs_activity_is_seeded():
     activity = initial_activities["Manga Maniacs"]
 
     assert activity["description"] == (
-        "Explore the fantastic stories of the most interesting characters from "
-        "Japanese Manga (graphic novels)."
+        "Dive into epic adventures, unforgettable characters, and stunning worlds "
+        "from Japanese manga and graphic novels."
     )
     assert activity["schedule"] == "Tuesdays, 7:00 PM - 8:00 PM"
     assert activity["schedule_details"]["days"] == ["Tuesday"]
